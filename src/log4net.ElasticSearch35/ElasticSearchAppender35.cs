@@ -9,7 +9,7 @@ using log4net.ElasticSearch.Net35.Models;
 
 namespace log4net.ElasticSearch.Net35
 {
-    public class ElasticSearchAppender : AppenderSkeleton
+    public class ElasticSearchAppender35 : AppenderSkeleton
     {
         public string ConnectionString { get; set; }
 
