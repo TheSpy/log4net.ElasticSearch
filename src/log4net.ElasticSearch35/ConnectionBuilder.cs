@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 
-namespace log4net.ElasticSearch35
+namespace log4net.ElasticSearch.Net35
 {
     /// <summary>
     /// Build a simple ElasticSearch Uri based on the connection string settings

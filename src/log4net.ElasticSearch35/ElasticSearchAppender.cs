@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using Newtonsoft.Json;
 using log4net.Appender;
 using log4net.Core;
-using log4net.ElasticSearch35.Models;
+using log4net.ElasticSearch.Net35.Models;
 
-namespace log4net.ElasticSearch35
+namespace log4net.ElasticSearch.Net35
 {
     public class ElasticSearchAppender : AppenderSkeleton
     {

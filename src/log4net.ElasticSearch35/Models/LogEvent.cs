@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 
-namespace log4net.ElasticSearch35.Models
+namespace log4net.ElasticSearch.Net35.Models
 {
     public class LogEvent
     {

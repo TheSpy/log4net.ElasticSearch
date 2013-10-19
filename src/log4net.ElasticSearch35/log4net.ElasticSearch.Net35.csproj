@@ -7,8 +7,8 @@
     <ProjectGuid>{ED111EBF-C6AA-4098-AAFE-2717F373B43B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>log4net.ElasticSearch35</RootNamespace>
-    <AssemblyName>log4net.ElasticSearch35</AssemblyName>
+    <RootNamespace>log4net.ElasticSearch.Net35</RootNamespace>
+    <AssemblyName>log4net.ElasticSearch.Net35</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

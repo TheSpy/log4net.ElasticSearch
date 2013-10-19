@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElasticSearchAppender35Tests.cs" />
     <Compile Include="ElasticSearchAppenderTests.cs" />
     <Compile Include="ElasticSearchTestSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
