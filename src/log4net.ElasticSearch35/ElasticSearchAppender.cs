@@ -1,21 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using Nest;
+using System.Net;
+using System.Text;
+using Newtonsoft.Json;
 using log4net.Appender;
 using log4net.Core;
-using log4net.ElasticSearch.Models;
+using log4net.ElasticSearch35.Models;
 
-namespace log4net.ElasticSearch
+namespace log4net.ElasticSearch35
 {
     public class ElasticSearchAppender : AppenderSkeleton
     {
-        //private readonly ConnectionSettings elasticSettings;
-        private  ElasticClient client;
-
         public string ConnectionString { get; set; }
 
         /// <summary>
-        /// Add a log event to the ElasticSearch Repo
+        /// Add a log to the ElasticSearch repo
         /// </summary>
         /// <param name="loggingEvent"></param>
         protected override void Append(Core.LoggingEvent loggingEvent)
@@ -28,10 +29,8 @@ namespace log4net.ElasticSearch
                 return;
             }
 
-            client = new ElasticClient(ConnectionBuilder.BuildElsticSearchConnection(ConnectionString));
-            
             LogEvent logEvent = new LogEvent();
-            
+
             if (logEvent == null)
             {
                 throw new ArgumentNullException("logEvent");
@@ -65,13 +64,43 @@ namespace log4net.ElasticSearch
 
             logEvent.Properties = loggingEvent.Properties.GetKeys().ToDictionary(key => key, key => logEvent.Properties[key].ToString());
 
+            SendError(logEvent);
+        }
+
+        /// <summary>
+        /// Use basic web request to send an event directly to ElasticSearch
+        /// </summary>
+        /// <param name="logEvent">LogEvent object</param>
+        public void SendError(LogEvent logEvent)
+        {
+            string url = ConnectionBuilder.BuildElsticSearchConnection(ConnectionString);
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.Accept = "application/json";
+            
+            String json = JsonConvert.SerializeObject(logEvent);
+            StreamWriter writer = new StreamWriter(request.GetRequestStream());
+            writer.Write(json);
+            writer.Close();
+
+            string responseContent;
+
             try
             {
-                client.IndexAsync(logEvent);    
+                using (WebResponse response = request.GetResponse())
+                {
+                    Stream responseStream = response.GetResponseStream();
+                    using (StreamReader reader = new StreamReader(responseStream))
+                    {
+                        responseContent = reader.ReadToEnd();
+                    }
+                }
             }
-            catch(Exception exception)
+            catch (WebException)
             {
-                throw new ApplicationException(exception.Message);
+                responseContent = string.Format("UNKNOWN");
             }
         }
     }
