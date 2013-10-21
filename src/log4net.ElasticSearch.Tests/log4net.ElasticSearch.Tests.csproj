@@ -58,7 +58,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ElasticSearchAppender35Tests.cs" />
     <Compile Include="ElasticSearchAppenderTests.cs" />
     <Compile Include="ElasticSearchTestSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\log4net.ElasticSearch35\log4net.ElasticSearch.Net35.csproj">
+      <Project>{ed111ebf-c6aa-4098-aafe-2717f373b43b}</Project>
+      <Name>log4net.ElasticSearch.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\log4net.ElasticSearch\log4net.ElasticSearch.csproj">
       <Project>{22964cb0-8a39-41ea-807d-b5216d27df70}</Project>
       <Name>log4net.ElasticSearch</Name>

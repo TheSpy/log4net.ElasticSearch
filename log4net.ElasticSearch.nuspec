@@ -21,8 +21,8 @@
     </dependencies>
   </metadata>
   <files>
-  <file src="lib\**\log4net.ElasticSearch*.dll" target="lib"/> 
-  <file src="lib\**\og4net.ElasticSearch*.pdb" target="lib"/> 
-  <file src="lib\**\og4net.ElasticSearch*.XML" target="lib"/> 
+    <file src="lib\**\log4net.ElasticSearch*.dll" target="lib"/> 
+    <file src="lib\**\og4net.ElasticSearch*.pdb" target="lib"/> 
+    <file src="lib\**\og4net.ElasticSearch*.XML" target="lib"/> 
   </files>
 </package>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ED111EBF-C6AA-4098-AAFE-2717F373B43B}</ProjectGuid>
+    <ProjectGuid>{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>log4net.ElasticSearch.Net35</RootNamespace>
-    <AssemblyName>log4net.ElasticSearch.Net35</AssemblyName>
+    <RootNamespace>log4net.ElasticSearchLegacy.Tests</RootNamespace>
+    <AssemblyName>log4net.ElasticSearchLegacy.Tests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,24 +33,33 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.2\lib\net35-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net35\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="xunit">
+      <HintPath>..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionBuilder.cs" />
-    <Compile Include="ElasticSearchAppender.cs" />
-    <Compile Include="Models\LogEvent.cs" />
+    <Compile Include="ElasticSearchLegacyAppenderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\log4net.ElasticSearch35\log4net.ElasticSearch.Net35.csproj">
+      <Project>{ed111ebf-c6aa-4098-aafe-2717f373b43b}</Project>
+      <Name>log4net.ElasticSearch.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

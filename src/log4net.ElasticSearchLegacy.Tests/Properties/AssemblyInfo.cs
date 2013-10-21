@@ -5,11 +5,11 @@ using log4net.Config;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("log4net.ElasticSearch.Tests")]
+[assembly: AssemblyTitle("log4net.ElasticSearchLegacy.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("log4net.ElasticSearch.Tests")]
+[assembly: AssemblyProduct("log4net.ElasticSearchLegacy.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using log4net.Config;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5b0b6737-b33b-436e-aeab-33f32554855b")]
+[assembly: Guid("3f8e7274-f5af-4ae2-8ae7-58a056bef140")]
 
 // Version information for an assembly consists of the following four values:
 //

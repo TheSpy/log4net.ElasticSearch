@@ -9,7 +9,7 @@ using log4net.ElasticSearch.Net35.Models;
 
 namespace log4net.ElasticSearch.Net35
 {
-    public class ElasticSearchAppender35 : AppenderSkeleton
+    public class ElasticSearchAppender : AppenderSkeleton
     {
         public string ConnectionString { get; set; }
 
@@ -17,7 +17,7 @@ namespace log4net.ElasticSearch.Net35
         /// Add a log to the ElasticSearch repo
         /// </summary>
         /// <param name="loggingEvent"></param>
-        protected override void Append(Core.LoggingEvent loggingEvent)
+        protected override void Append(LoggingEvent loggingEvent)
         {
             if (string.IsNullOrEmpty(ConnectionString))
             {

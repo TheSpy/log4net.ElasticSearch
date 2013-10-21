@@ -58,6 +58,7 @@ namespace log4net.ElasticSearch.Tests
         {
             _log.Info("loggingtest");
             client.Flush();
+            Thread.Sleep(2000);
 
             var searchResults = client.Search<LogEvent>(s => s.Query(q => q.Term(x => x.Message, "loggingtest")));
 

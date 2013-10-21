@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearch.Net35", "log4net.ElasticSearch35\log4net.ElasticSearch.Net35.csproj", "{ED111EBF-C6AA-4098-AAFE-2717F373B43B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearchLegacy.Tests", "log4net.ElasticSearchLegacy.Tests\log4net.ElasticSearchLegacy.Tests.csproj", "{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{ED111EBF-C6AA-4098-AAFE-2717F373B43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED111EBF-C6AA-4098-AAFE-2717F373B43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED111EBF-C6AA-4098-AAFE-2717F373B43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
