@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using Newtonsoft.Json;
 using log4net.Appender;
@@ -60,7 +60,10 @@ namespace log4net.ElasticSearch
                 logEvent.MethodName = loggingEvent.LocationInformation.MethodName;
             }
 
-            logEvent.Properties = loggingEvent.Properties.GetKeys().ToDictionary(key => key, key => logEvent.Properties[key].ToString());
+            foreach (var key in loggingEvent.Properties.GetKeys())
+            {
+                logEvent.Properties.Add((KeyValuePair<string,string>)loggingEvent.Properties[key]);
+            }
 
             SendError(logEvent);
         }

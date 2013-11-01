@@ -7,21 +7,26 @@ using Xunit;
 
 namespace log4net.ElasticSearchLegacy.Tests
 {
-    public class ElasticSearchLegacyAppenderTests
+    public class ElasticSearchLegacyAppenderTests : ElasticSearchTestSetup, IDisposable
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof(ElasticSearchLegacyAppenderTests));
 
         [Fact]
         public void Can_create_an_event_from_log4net()
         {
-            _log.Info("loggingtest");
+            //_log.Info("loggingtest");
             
-            //Thread.Sleep(2000);
+            Thread.Sleep(2000);
 
             //var searchResults = client.Search<LogEvent>(s => s.Query(q => q.Term(x => x.Message, "loggingtest")));
 
             //Assert.Equal(1, Convert.ToInt32(searchResults.Hits.Total));
 
+        }
+
+        public void Dispose()
+        {
+            DeleteTestIndex();
         }
     }
 }
