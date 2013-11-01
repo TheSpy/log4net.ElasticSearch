@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 
-namespace log4net.ElasticSearch.Net35
+namespace log4net.ElasticSearch
 {
     /// <summary>
     /// Build a simple ElasticSearch Uri based on the connection string settings
@@ -23,7 +23,7 @@ namespace log4net.ElasticSearch.Net35
                     lookup[key] = Convert.ToString(builder[key]);
                 }
 
-                returnUrl = string.Format("http://{0}:{1}/_{2}", lookup["Server"], lookup["Port"], lookup["Index"]);
+                returnUrl = string.Format("http://{0}:{1}/{2}/LogEvent", lookup["Server"], lookup["Port"], lookup["Index"]);
 
                 return returnUrl;
             }

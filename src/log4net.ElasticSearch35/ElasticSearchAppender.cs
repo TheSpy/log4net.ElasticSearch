@@ -5,9 +5,9 @@ using System.Net;
 using Newtonsoft.Json;
 using log4net.Appender;
 using log4net.Core;
-using log4net.ElasticSearch.Net35.Models;
+using log4net.ElasticSearch.Models;
 
-namespace log4net.ElasticSearch.Net35
+namespace log4net.ElasticSearch
 {
     public class ElasticSearchAppender : AppenderSkeleton
     {

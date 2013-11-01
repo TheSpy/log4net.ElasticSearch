@@ -16,7 +16,7 @@ namespace log4net.ElasticSearchLegacy.Tests
         {
             _log.Info("loggingtest");
             
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
 
             //var searchResults = client.Search<LogEvent>(s => s.Query(q => q.Term(x => x.Message, "loggingtest")));
 

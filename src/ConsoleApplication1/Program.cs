@@ -13,6 +13,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             _log.Info("console");
+            
         }
     }
 }

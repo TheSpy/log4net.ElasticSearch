@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace log4net.ElasticSearch.Net35.Models
+namespace log4net.ElasticSearch.Models
 {
     public class LogEvent
     {

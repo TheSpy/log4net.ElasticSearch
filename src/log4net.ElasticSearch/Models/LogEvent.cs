@@ -13,6 +13,7 @@ namespace log4net.ElasticSearch.Models
             Id = GenerateUniqueId();
         }
 
+        [ElasticProperty(Name = "_id")]
         public string Id { get; set; }
 
         [ElasticProperty(Name = "TimeStamp")]

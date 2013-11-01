@@ -7,10 +7,11 @@
     <ProjectGuid>{ED111EBF-C6AA-4098-AAFE-2717F373B43B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>log4net.ElasticSearch.Net35</RootNamespace>
+    <RootNamespace>log4net.ElasticSearch</RootNamespace>
     <AssemblyName>log4net.ElasticSearch.Net35</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
