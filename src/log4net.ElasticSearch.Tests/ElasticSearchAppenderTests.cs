@@ -56,9 +56,9 @@ namespace log4net.ElasticSearch.Tests
         [Fact]
         public void Can_create_an_event_from_log4net()
         {
-            _log.Info("loggingtest");
+            _log.Error("loggingtest");
             client.Flush();
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
 
             var searchResults = client.Search<LogEvent>(s => s.Query(q => q.Term(x => x.Message, "loggingtest")));
 
@@ -68,7 +68,7 @@ namespace log4net.ElasticSearch.Tests
 
         public void Dispose()
         {
-            DeleteTestIndex();
+            //DeleteTestIndex();
         }
     }
 }
