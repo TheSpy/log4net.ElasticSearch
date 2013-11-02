@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearch", "log4net.ElasticSearch\log4net.ElasticSearch.csproj", "{22964CB0-8A39-41EA-807D-B5216D27DF70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearch.Tests", "log4net.ElasticSearch.Tests\log4net.ElasticSearch.Tests.csproj", "{2F7D7AD4-2DA0-430A-9E90-9D0E398D590C}"
@@ -17,7 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearch.Net35
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearchLegacy.Tests", "log4net.ElasticSearchLegacy.Tests\log4net.ElasticSearchLegacy.Tests.csproj", "{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearch.Net30", "log4net.ElasticSearch.Net30\log4net.ElasticSearch.Net30.csproj", "{A36F7B1E-D023-4741-A0DF-11CCC546B820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication30", "ConsoleApplication30\ConsoleApplication30.csproj", "{A4E9262B-3027-4393-8C37-68CC2F60879D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +49,14 @@ Global
 		{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2F7A80D-87E5-4EED-899B-1A8B5B66D81F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8FABFAC-4A53-462D-AF0E-E988E398B0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36F7B1E-D023-4741-A0DF-11CCC546B820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36F7B1E-D023-4741-A0DF-11CCC546B820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36F7B1E-D023-4741-A0DF-11CCC546B820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36F7B1E-D023-4741-A0DF-11CCC546B820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4E9262B-3027-4393-8C37-68CC2F60879D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4E9262B-3027-4393-8C37-68CC2F60879D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4E9262B-3027-4393-8C37-68CC2F60879D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4E9262B-3027-4393-8C37-68CC2F60879D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
