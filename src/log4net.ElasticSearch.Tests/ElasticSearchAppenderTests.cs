@@ -58,7 +58,7 @@ namespace log4net.ElasticSearch.Tests
         {
             _log.Error("loggingtest");
             client.Flush();
-            Thread.Sleep(3000);
+            Thread.Sleep(4000);
 
             var searchResults = client.Search<LogEvent>(s => s.Query(q => q.Term(x => x.Message, "loggingtest")));
 
@@ -68,7 +68,7 @@ namespace log4net.ElasticSearch.Tests
 
         public void Dispose()
         {
-            //DeleteTestIndex();
+            DeleteTestIndex();
         }
     }
 }
