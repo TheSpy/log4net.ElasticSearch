@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearchLegacy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearch.Net30", "log4net.ElasticSearch.Net30\log4net.ElasticSearch.Net30.csproj", "{A36F7B1E-D023-4741-A0DF-11CCC546B820}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication30", "ConsoleApplication30\ConsoleApplication30.csproj", "{A4E9262B-3027-4393-8C37-68CC2F60879D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net.ElasticSearch.Net20", "log4net.ElasticSearch.Net20\log4net.ElasticSearch.Net20.csproj", "{BD5154A6-69DB-45F4-9A85-4DB13324E105}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,10 @@ Global
 		{A36F7B1E-D023-4741-A0DF-11CCC546B820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A36F7B1E-D023-4741-A0DF-11CCC546B820}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A36F7B1E-D023-4741-A0DF-11CCC546B820}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4E9262B-3027-4393-8C37-68CC2F60879D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4E9262B-3027-4393-8C37-68CC2F60879D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4E9262B-3027-4393-8C37-68CC2F60879D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4E9262B-3027-4393-8C37-68CC2F60879D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5154A6-69DB-45F4-9A85-4DB13324E105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5154A6-69DB-45F4-9A85-4DB13324E105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5154A6-69DB-45F4-9A85-4DB13324E105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5154A6-69DB-45F4-9A85-4DB13324E105}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

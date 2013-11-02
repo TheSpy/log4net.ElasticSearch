@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-using log4net.Config;
-
-[assembly: AssemblyTitle("ConsoleApplication30")]
+[assembly: AssemblyTitle("log4net.ElasticSearch.Net20")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ConsoleApplication30")]
+[assembly: AssemblyProduct("log4net.ElasticSearch.Net20")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +20,7 @@ using log4net.Config;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cd49f8cf-4dd5-4ded-bbb8-72a680b72181")]
+[assembly: Guid("22229861-4146-450a-a727-8304e1559241")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -35,4 +34,3 @@ using log4net.Config;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: XmlConfigurator(ConfigFile = "logConfig.xml", Watch = true)]
