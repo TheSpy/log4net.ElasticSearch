@@ -21,6 +21,7 @@ namespace log4net.ElasticSearch
             
             httpWebRequest.ContentType = "text/json";
             httpWebRequest.Method = "POST";
+            httpWebRequest.Timeout = 10000;
         }
 
         /// <summary>
@@ -37,14 +38,19 @@ namespace log4net.ElasticSearch
                 streamWriter.Flush();
                 streamWriter.Close();
 
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                httpResponse.Close();
-
-                if (httpResponse.StatusCode != HttpStatusCode.Created)
-                {
-                    throw new InvalidOperationException("Failed to correctly add the event to the Elasticsearch index.");
-                }
+                httpWebRequest.BeginGetResponse(new AsyncCallback(FinishWebRequest), httpWebRequest);
             }
+        }
+
+
+        private void FinishWebRequest(IAsyncResult result)
+        {
+            HttpWebResponse response = (result.AsyncState as HttpWebRequest).EndGetResponse(result) as HttpWebResponse;
+
+            if (response.StatusCode != HttpStatusCode.Created)
+                throw new InvalidOperationException("Failed to correctly add the event to the Elasticsearch index.");
+
+            response.Close();
         }
     }
 }
