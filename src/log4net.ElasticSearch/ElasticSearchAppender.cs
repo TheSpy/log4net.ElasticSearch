@@ -9,7 +9,7 @@ namespace log4net.ElasticSearch
     public class ElasticSearchAppender : AppenderSkeleton
     {
         public string ConnectionString { get; set; }
-        private readonly IErrorHandler errorHandler;
+        private readonly IErrorHandler errorHandler = new GenericErrorHandler();
 
         /// <summary>
         /// Add a log event to the ElasticSearch Repo
