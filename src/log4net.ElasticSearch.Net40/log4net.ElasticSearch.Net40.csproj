@@ -52,14 +52,20 @@
     <Compile Include="..\log4net.ElasticSearch\ElasticSearchAppender.cs">
       <Link>ElasticSearchAppender.cs</Link>
     </Compile>
+    <Compile Include="..\log4net.ElasticSearch\GenericErrorHandler.cs">
+      <Link>GenericErrorHandler.cs</Link>
+    </Compile>
     <Compile Include="..\log4net.ElasticSearch\LogClient.cs">
       <Link>LogClient.cs</Link>
     </Compile>
     <Compile Include="..\log4net.ElasticSearch\Models\ElasticsearchConnection.cs">
       <Link>Models\ElasticsearchConnection.cs</Link>
     </Compile>
-    <Compile Include="..\log4net.ElasticSearch\Models\LogEvent.cs">
-      <Link>Models\LogEvent.cs</Link>
+    <Compile Include="..\log4net.ElasticSearch\Models\logEvent.cs">
+      <Link>Models\logEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\log4net.ElasticSearch\Models\RequestState.cs">
+      <Link>Models\RequestState.cs</Link>
     </Compile>
     <Compile Include="..\log4net.ElasticSearch\Models\UniqueIdGenerator.cs">
       <Link>Models\UniqueIdGenerator.cs</Link>

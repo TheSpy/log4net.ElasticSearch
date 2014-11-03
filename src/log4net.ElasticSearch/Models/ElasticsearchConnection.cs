@@ -5,5 +5,6 @@
         public string Server { get; set; }
         public string Port { get; set; }
         public string Index { get; set; }
+        public string Timeout { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using log4net.ElasticSearch.Models;
 using log4net.Appender;
 using log4net.Core;
@@ -8,6 +9,7 @@ namespace log4net.ElasticSearch
     public class ElasticSearchAppender : AppenderSkeleton
     {
         public string ConnectionString { get; set; }
+        private readonly IErrorHandler errorHandler;
 
         /// <summary>
         /// Add a log event to the ElasticSearch Repo
@@ -18,68 +20,61 @@ namespace log4net.ElasticSearch
             if (string.IsNullOrEmpty(ConnectionString))
             {
                 var exception = new InvalidOperationException("Connection string not present.");
-                ErrorHandler.Error("Connection string not included in appender.", exception, ErrorCode.GenericFailure);
-
+                errorHandler.Error("Connection string not included in appender.", exception, ErrorCode.GenericFailure);
                 return;
             }
             var settings = ConnectionBuilder.BuildElsticSearchConnection(ConnectionString);
             var client = new LogClient(settings);
 
             var logEvent = CreateLogEvent(loggingEvent);
-            try
-            {
-                client.CreateEvent(logEvent);
-            }
-            catch (InvalidOperationException ex)
-            {
-                ErrorHandler.Error("Invalid connection to ElasticSearch", ex, ErrorCode.GenericFailure);
-            }
+            
+            ThreadPool.QueueUserWorkItem(task => client.CreateEvent(logEvent));
         }
 
-        private static LogEvent CreateLogEvent(LoggingEvent loggingEvent)
+        private static logEvent CreateLogEvent(LoggingEvent loggingEvent)
         {
             if (loggingEvent == null)
             {
                 throw new ArgumentNullException("loggingEvent");
             }
 
-            var logEvent = new LogEvent();
-            logEvent.Id = new UniqueIdGenerator().GenerateUniqueId();
-            logEvent.LoggerName = loggingEvent.LoggerName;
-            logEvent.Domain = loggingEvent.Domain;
-            logEvent.Identity = loggingEvent.Identity;
-            logEvent.ThreadName = loggingEvent.ThreadName;
-            logEvent.UserName = loggingEvent.UserName;
-            logEvent.MessageObject = loggingEvent.MessageObject == null ? "" : loggingEvent.MessageObject.ToString();
-            logEvent.TimeStamp = loggingEvent.TimeStamp.ToUniversalTime().ToString("O");
-            logEvent.Exception = loggingEvent.ExceptionObject == null ? "" : loggingEvent.ExceptionObject.ToString();
-            logEvent.Message = loggingEvent.RenderedMessage;
-            logEvent.Fix = loggingEvent.Fix.ToString();
-            logEvent.HostName = Environment.MachineName;
+            var logEvent = new logEvent();
+            logEvent.id = new UniqueIdGenerator().GenerateUniqueId();
+            logEvent.loggerName = loggingEvent.LoggerName;
+            logEvent.domain = loggingEvent.Domain;
+            logEvent.identity = loggingEvent.Identity;
+            logEvent.threadName = loggingEvent.ThreadName;
+            logEvent.userName = loggingEvent.UserName;
+            logEvent.messageObject = loggingEvent.MessageObject == null ? "" : loggingEvent.MessageObject.ToString();
+            logEvent.timeStamp = loggingEvent.TimeStamp.ToUniversalTime().ToString("O");
+            logEvent.exception = loggingEvent.ExceptionObject == null ? "" : loggingEvent.ExceptionObject.ToString();
+            logEvent.message = loggingEvent.RenderedMessage;
+            logEvent.fix = loggingEvent.Fix.ToString();
+            logEvent.hostName = Environment.MachineName;
 
             if (loggingEvent.Level != null)
             {
-                logEvent.Level = loggingEvent.Level.DisplayName;
+                logEvent.level = loggingEvent.Level.DisplayName;
             }
 
             if (loggingEvent.LocationInformation != null)
             {
-                logEvent.ClassName = loggingEvent.LocationInformation.ClassName;
-                logEvent.FileName = loggingEvent.LocationInformation.FileName;
-                logEvent.LineNumber = loggingEvent.LocationInformation.LineNumber;
-                logEvent.FullInfo = loggingEvent.LocationInformation.FullInfo;
-                logEvent.MethodName = loggingEvent.LocationInformation.MethodName;
+                logEvent.className = loggingEvent.LocationInformation.ClassName;
+                logEvent.fileName = loggingEvent.LocationInformation.FileName;
+                logEvent.lineNumber = loggingEvent.LocationInformation.LineNumber;
+                logEvent.fullInfo = loggingEvent.LocationInformation.FullInfo;
+                logEvent.methodName = loggingEvent.LocationInformation.MethodName;
             }
 
             var properties = loggingEvent.GetProperties();
            
             foreach (var propertyKey in properties.GetKeys())
             {
-                logEvent.Properties.Add(propertyKey, properties[propertyKey].ToString());
+                logEvent.properties.Add(propertyKey, properties[propertyKey].ToString());
             }
 
             // Add a "@timestamp" field to match the logstash format
-            logEvent.Properties.Add("@timestamp", loggingEvent.TimeStamp.ToUniversalTime().ToString("O")); 
+            logEvent.properties.Add("@timestamp", loggingEvent.TimeStamp.ToUniversalTime().ToString("O")); 
 
             return logEvent;
         }

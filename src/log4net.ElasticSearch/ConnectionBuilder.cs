@@ -36,7 +36,8 @@ namespace log4net.ElasticSearch
                     {
                         Server = lookup["Server"],
                         Port = lookup["Port"],
-                        Index = index
+                        Index = index,
+                        Timeout = lookup["Timeout"]
                     };
             }
             catch
