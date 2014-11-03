@@ -4,7 +4,6 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Web.Script.Serialization;
-using log4net.Config;
 using log4net.Core;
 using log4net.ElasticSearch.Models;
 
